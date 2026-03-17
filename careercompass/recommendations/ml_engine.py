@@ -9,21 +9,23 @@ DATA_PATH = os.path.join(BASE_DIR, "datasets", "career_recommendation_dataset_v2
 
 
 def load_dataset():
+
     df = pd.read_csv(DATA_PATH)
 
-    # combine useful columns for ML
     df["combined"] = (
         df["Focus Area"].astype(str) + " " +
         df["Best Languages/Tools"].astype(str) + " " +
-        df["Job Opportunity"].astype(str)
+        df["job opportunity"].astype(str)
     )
 
     return df
 
 
-def recommend_career(user_input):
+def recommend_career(skills, interests):
 
     df = load_dataset()
+
+    user_input = skills + " " + interests
 
     corpus = df["combined"].tolist()
     corpus.append(user_input)
@@ -35,6 +37,18 @@ def recommend_career(user_input):
 
     top_indices = similarity[0].argsort()[-3:][::-1]
 
-    recommendations = df.iloc[top_indices]["Job Opportunity"].tolist()
+    results = df.iloc[top_indices]
+
+    recommendations = []
+
+    for _, row in results.iterrows():
+        recommendations.append({
+            "job_opportunity": row["job opportunity"],
+            "focus_area": row["Focus Area"],
+            "tools": row["Best Languages/Tools"],
+            "job_role": row["job role"],
+            "future_demand": row["Future Trends / Demand"],
+            "certifications": row["Recommended Certifications / Platforms"]
+        })
 
     return recommendations

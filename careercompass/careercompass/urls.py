@@ -1,13 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from django.shortcuts import render
-from accounts.views import create_profile
-
-def home(request):
-    return render(request, "home.html")
+from accounts.views import create_profile, home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
-    path('profile/', create_profile),
+    path('', home, name="home"),
+    path('profile/', create_profile, name="profile"),
 ]
