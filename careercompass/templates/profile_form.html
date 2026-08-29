@@ -10,7 +10,6 @@
 <title>CareerCompass Profile</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -21,27 +20,12 @@ box-sizing:border-box;
 }
 
 body{
-background:
-radial-gradient(circle at top right, #e0e7ff, #f8fafc 45%),
-linear-gradient(135deg, #f8fafc, #f1f5f9);
+background-color:#0d1117;
 min-height:100vh;
-color:#0f172a;
-font-family:'Outfit', sans-serif;
+color:#c9d1d9;
+font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 overflow-x:hidden;
 position:relative;
-}
-
-body::before{
-content:'';
-position:fixed;
-width:600px;
-height:600px;
-background:#818cf8;
-filter:blur(150px);
-opacity:0.12;
-top:-150px;
-right:-100px;
-z-index:0;
 }
 
 .container{
@@ -50,38 +34,37 @@ z-index:2;
 }
 
 .navbar{
-background:rgba(255,255,255,0.45);
-backdrop-filter:blur(12px);
-padding:18px 0;
-border-bottom:1px solid rgba(0,0,0,0.06);
+background-color:#161b22;
+padding:16px 0;
+border-bottom:1px solid #30363d;
 }
 
 .navbar-brand{
-font-size:28px;
-font-weight:700;
-color:#0f172a !important;
+font-size:24px;
+font-weight:600;
+color:#f0f6fc !important;
+text-decoration:none;
 }
 
 .gradient-text{
-background:linear-gradient(90deg,#4f46e5,#0ea5e9);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+color:#58a6ff;
 }
 
 .btn-outline-light{
-border:1px solid #cbd5e1;
-color:#475569 !important;
-border-radius:10px;
-padding:8px 18px;
-background:transparent;
+border:1px solid #30363d;
+color:#c9d1d9 !important;
+border-radius:6px;
+padding:6px 14px;
+background-color:#21262d;
 font-weight:500;
-transition:all 0.2s;
+font-size:14px;
+transition:0.2s;
+text-decoration:none;
 }
 
 .btn-outline-light:hover{
-background:#f1f5f9;
-border-color:#94a3b8;
-color:#0f172a !important;
+background-color:#30363d;
+border-color:#8b949e;
 }
 
 .page-wrapper{
@@ -89,41 +72,41 @@ min-height:85vh;
 display:flex;
 align-items:center;
 justify-content:center;
-padding:50px 0;
+padding:40px 0;
 }
 
 .form-card{
 width:100%;
 max-width:760px;
-background:rgba(255, 255, 255, 0.7);
-border:1px solid rgba(255, 255, 255, 0.6);
-border-radius:28px;
-backdrop-filter:blur(14px);
-box-shadow:0 10px 40px rgba(0,0,0,0.04);
-padding:45px;
-color:#0f172a;
+background-color:#161b22;
+border:1px solid #30363d;
+border-radius:6px;
+padding:40px;
+color:#c9d1d9;
+box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
 .form-title{
-font-size:42px;
-font-weight:800;
-margin-bottom:12px;
+font-size:32px;
+font-weight:600;
+margin-bottom:8px;
 text-align:center;
-color:#0f172a;
+color:#f0f6fc;
 }
 
 .form-subtitle{
 text-align:center;
-color:#64748b;
-margin-bottom:40px;
-font-size:17px;
+color:#8b949e;
+margin-bottom:32px;
+font-size:15px;
 }
 
 .form-label{
 font-weight:600;
-margin-bottom:10px;
+font-size:14px;
+margin-bottom:6px;
 display:block;
-color:#334155;
+color:#f0f6fc;
 }
 
 /* INPUTS */
@@ -131,15 +114,19 @@ color:#334155;
 textarea,
 select,
 input{
-background:#ffffff !important;
-border:1px solid #cbd5e1 !important;
-color:#0f172a !important;
-border-radius:14px !important;
-padding:16px !important;
+background-color:#0d1117 !important;
+border:1px solid #30363d !important;
+color:#c9d1d9 !important;
+border-radius:6px !important;
+padding:10px 14px !important;
 width:100%;
-margin-bottom:24px; /* Proper spacings */
-box-shadow: inset 0 2px 4px rgba(0,0,0,0.01);
-transition: 0.2s ease;
+font-size:14px;
+transition: border-color 0.2s ease;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
 }
 
 /* SELECT FIX */
@@ -149,16 +136,16 @@ cursor:pointer;
 }
 
 select option{
-background:#ffffff !important;
-color:#0f172a !important;
-padding:12px;
+background-color:#161b22 !important;
+color:#c9d1d9 !important;
+padding:10px;
 }
 
 /* PLACEHOLDER */
 
 textarea::placeholder,
 input::placeholder{
-color:#94a3b8 !important;
+color:#8b949e !important;
 }
 
 /* FOCUS */
@@ -166,45 +153,44 @@ color:#94a3b8 !important;
 textarea:focus,
 select:focus,
 input:focus{
-box-shadow:0 0 0 3px rgba(99,102,241,0.15)!important;
-border-color:#6366f1!important;
-outline:none!important;
-background:#ffffff!important;
-color:#0f172a!important;
+box-shadow:0 0 0 3px rgba(56, 139, 253, 0.3) !important;
+border-color:#58a6ff !important;
+outline:none !important;
 }
 
 /* FORM TEXT */
 
 .form-text{
-color:#64748b;
-margin-top:8px;
+color:#8b949e;
+margin-top:4px;
+font-size:12px;
 }
 
 /* BUTTON */
 
 .generate-btn{
-background:linear-gradient(90deg,#4f46e5,#0ea5e9);
-border:none;
-padding:14px 30px;
-border-radius:14px;
-font-size:17px;
-font-weight:700;
+background-color:#238636;
+border:1px solid rgba(240,246,252,0.1);
+padding:12px 24px;
+border-radius:6px;
+font-size:15px;
+font-weight:600;
 color:white;
-transition:0.3s ease;
+transition:0.2s ease;
 width:100%;
 margin-top:10px;
-box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+cursor:pointer;
 }
 
 .generate-btn:hover{
-transform:translateY(-2px);
-box-shadow:0 6px 20px rgba(79, 70, 229, 0.3);
+background-color:#2ea44f;
+border-color:rgba(240,246,252,0.15);
 }
 
 /* SPACING */
 
 .section-space{
-margin-bottom:28px;
+margin-bottom:20px;
 }
 
 /* MOBILE */
@@ -212,11 +198,11 @@ margin-bottom:28px;
 @media(max-width:768px){
 
 .form-card{
-padding:30px;
+padding:24px;
 }
 
 .form-title{
-font-size:32px;
+font-size:26px;
 }
 
 }
@@ -229,7 +215,7 @@ font-size:32px;
 
 <!-- NAVBAR -->
 
-<nav class="navbar navbar-dark">
+<nav class="navbar">
 
 <div class="container">
 
