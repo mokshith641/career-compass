@@ -17,3 +17,10 @@ class AccountViewsTests(TestCase):
         response = self.client.get(reverse('signup'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'signup.html')
+
+    def test_profile_view_handles_missing_profile_on_get(self):
+        User.objects.create_user(username='testuser', password='password123')
+        self.client.login(username='testuser', password='password123')
+        response = self.client.get(reverse('profile'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'profile_form.html')
